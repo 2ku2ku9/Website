@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>TEST MOCK</title>
+<meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=0.5,user-scalable=yes,initial-scale=1.0" />
+<link href="common/css/import.css" rel="stylesheet" type="text/css" media="all">
+<link href="common/css/mock.css" rel="stylesheet" type="text/css" media="screen and (min-width:768px)">
+<link href="common/css/mock_sp.css" rel="stylesheet" type="text/css" media="screen and (max-width: 500px)">
+<!--[if IE 8]>
+<link href="common/css/mock.css" rel="stylesheet" type="text/css" media="all">
+<![endif]-->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script>
+$(function()
+{      var MOVE_LIMIT_Y = 10;
+      $('.snap' ).on({
+          'touchstart': function() {
+            this.isTouch = true;
+            this.pageY = event.touches[0].screenY;
+          },
+          'touchmove': function() {
+            var distanceY = event.touches[0].screenY - this.pageY;
+            console.log(distanceY + " : " + MOVE_LIMIT_Y);
+            if( Math.abs(distanceY) > MOVE_LIMIT_Y ){
+              this.isTouch = false;
+            }
+          },
+          'touchend': function() {
+            if(this.isTouch == true){
+              // popupイベントを発生させる
+              $(this).toggleClass('hover');
+            }
+          }
+      });
+});
+</script>
+<style>
+h1 {text-align: center;font-size:24px;}
+div.snap {float:left;margin:0 0 10px 10px;}
+</style>
+
+</head>
+<body>
+<header>
+<h1>Mock</h1>
+</header>
+
+<section>
+
+<div class="snap">
+	<img src="common/image/image_01.jpg" alt="">
+	<div class="arrow"><span>Open</span></div>
+	<div class="caption">
+		<h3>低尾駒林野林園 林長（99）</h3>
+		<p>“潤山土”わさわさの世界でリフレッソョ</p>
+	</div>
+</div>
+<div class="snap">
+	<img src="common/image/image_02.jpg">
+	<div class="arrow"><span>Open</span></div>
+	<div class="caption">
+		<h3>SHUMAI&Umanohi 馬長（16）</h3>
+		<p>深川のマイクリソグドーロをモーニング出来たり、陵北森園でも運転出来る！</p>
+	</div>
+</div>
+<div class="snap">
+	<img src="common/image/image_03.jpg">
+	<div class="arrow"><span>Open</span></div>
+	<div class="caption">
+		<h3>Caption Title</h3>
+		<p>ああああああああああああ</p>
+	</div>
+</div>
+
+<div class="snap">
+	<img src="common/image/image_04.jpg">
+	<div class="arrow"><span>Open</span></div>
+	<div class="caption">
+		<h3>Caption Title</h3>
+		<p>ああああああああああああ</p>
+	</div>
+</div>
+<div class="snap">
+	<img src="common/image/image_05.jpg">
+	<div class="arrow"><span>Open</span></div>
+	<div class="caption">
+		<h3>Caption Title</h3>
+		<p>ああああああああああああ</p>
+	</div>
+</div>
+<div class="snap">
+	<img src="common/image/image_06.jpg">
+	<div class="arrow"><span>Open</span></div>
+	<div class="caption">
+		<h3>Caption Title</h3>
+		<p>ああああああああああああ</p>
+	</div>
+</div>
+
+<!--/contents--></section>
+
+
+</body>
+</html>

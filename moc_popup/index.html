@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>TEST MOCK</title>
+<meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=0.5,user-scalable=yes,initial-scale=1.0" />
+<link href="common/css/import.css" rel="stylesheet" type="text/css" media="all">
+<link href="common/css/mock.css" rel="stylesheet" type="text/css" media="screen and (min-width:768px)">
+<link href="common/css/mock_sp.css" rel="stylesheet" type="text/css" media="screen and (max-width: 500px)">
+<!--[if IE 8]>
+<link href="common/css/mock.css" rel="stylesheet" type="text/css" media="all">
+<![endif]-->
+<!--[if IE 9]> // 効かなかったらこれ。
+<style>.grd {filter: none !important;}</style>
+<![endif]-->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script>
+$(function(){
+/*
+	$( '.caption' ).on(
+	{
+		'touchstart': function() {
+			this.isTouch = true;
+		},
+		'touchmove': function() {
+			this.isTouch = false;
+		},
+		'touchend': function() {
+			if(this.isTouch == true){
+			 $(this).toggleClass('hover');// popupイベントを発生させる
+			}
+		}
+	});*/
+var MOVE_LIMIT_Y = 10;
+      $('.caption' ).on({
+          'touchstart': function() {
+            this.isTouch = true;
+            this.pageY = event.touches[0].screenY;
+          },
+          'touchmove': function() {
+            var distanceY = event.touches[0].screenY - this.pageY;
+            console.log(distanceY + " : " + MOVE_LIMIT_Y);
+            if( Math.abs(distanceY) > MOVE_LIMIT_Y ){
+              this.isTouch = false;
+            }
+          },
+          'touchend': function() {
+            if(this.isTouch == true){
+              // popupイベントを発生させる
+              $(this).toggleClass('hover');
+            }
+          }
+      });
+});
+</script>
+<style>
+div.snap {float:left;margin:0 0 10px 10px;}
+</style>
+
+</head>
+<body>
+<header>
+<h1>Mock</h1>
+</header>
+
+<section>
+
+
+<div class="snap">
+	<img src="common/image/image_01.jpg">
+	<div class="caption">
+		<h3>Caption Title</h3>
+		<p>町の上に高く柱がそびえ、その上に幸福の王子の像が立っていました。王子の像は全体を薄い純金で覆われ、目は二つの輝くサファイアで、王子の剣のつかには大きな赤いルビーが光っていました。</p>
+	</div>
+</div>
+<div class="snap">
+	<img src="common/image/image_02.jpg">
+	<div class="caption">
+		<h3>Caption Title</h3>
+		<p>ああああああああああああ</p>
+	</div>
+</div>
+<div class="snap">
+	<img src="common/image/image_03.jpg">
+	<div class="caption">
+		<h3>Caption Title</h3>
+		<p>ああああああああああああ</p>
+	</div>
+</div>
+
+<div class="snap">
+	<img src="common/image/image_04.jpg">
+	<div class="caption">
+		<h3>Caption Title</h3>
+		<p>ああああああああああああ</p>
+	</div>
+</div>
+<div class="snap">
+	<img src="common/image/image_05.jpg">
+	<div class="caption">
+		<h3>Caption Title</h3>
+		<p>ああああああああああああ</p>
+	</div>
+</div>
+<div class="snap">
+	<img src="common/image/image_06.jpg">
+	<div class="caption">
+		<h3>Caption Title</h3>
+		<p>ああああああああああああ</p>
+	</div>
+</div>
+
+<!--Emmet
+.snap({<img src="common/image/image_$$.jpg" alt="">}+.caption>h3+p)*26
+-->
+
+
+<!--/contents--></section>
+
+
+</body>
+</html>

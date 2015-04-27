@@ -1,0 +1,7 @@
+div.snap { position: relative; overflow: hidden; width: 238px; }
+div.caption { position: absolute; top: 10px; left: 10px; z-index: 2; width: 218px; height: 296px; background: rgba(33, 33, 33, 0.8); -webkit-transform: rotateY(180deg); transform: rotateY(180deg); -webkit-transition: .5s; transition: .5s; opacity: 0; filter: alpha(opacity=0); -ms-filter: "alpha(opacity=0)"; color: #fff; }
+div h3, div p { margin: 24px; }
+div.snap:hover div.caption { -webkit-transform: rotateY(0); transform: rotateY(0); opacity: 1; filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr=#99000000,EndColorStr=#99000000); }
+div.snap:hover div.caption:not(:target) { filter: none; -ms-filter: none; }
+
+/*# sourceMappingURL=mock.css.map */

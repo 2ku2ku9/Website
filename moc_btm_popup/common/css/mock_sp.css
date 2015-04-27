@@ -1,0 +1,61 @@
+div.snap {
+	position: relative;
+	overflow: hidden;
+	width: 150px;
+	height:198px;
+}
+div.snap img {width:100%;}
+
+div.arrow {
+	position: absolute;
+	width:36px;
+	height:36px;
+	right:0;
+	bottom: 0;
+	z-index:3;
+	background: rgba(33,33,33,.8);
+	-webkit-transition: .3s;
+	transition: .3s;
+}
+div.hover div.arrow {
+	background: rgba(33,33,33,0);
+}
+div.arrow span {
+	text-indent: 100%;
+	display: block;
+	width:36px;
+	height:36px;
+	background: url(../image/ar.png) no-repeat center center;
+	background-size: 11px;
+	-webkit-transform: scaleY(1);
+	transform: scaleY(1);
+	-webkit-transition: .3s;
+	transition: .3s;
+}
+div.hover div.arrow span {
+	-webkit-transform: scaleY(-1);
+	transform: scaleY(-1);
+}
+
+div.caption {
+	position: absolute;
+	bottom: -120px;
+	left: 0;
+	z-index: 2;
+	width:100%;
+	height: 120px;
+	background: rgba(33,33,33,.8);
+	-webkit-transition: .3s;
+	transition: .3s;
+	color:#fff;
+}
+div.caption h3,div.caption p {
+	font-size:12px;
+	line-height:1.25;
+	margin:10px 10px 0;
+}
+div.caption p { margin-top:5px; }
+
+div.hover div.caption{
+	bottom: 0;
+}

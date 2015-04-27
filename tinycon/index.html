@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>favicon</title>
+<link rel="icon" href="common/image/favicon.ico">
+<script src="common/js/tinycon.min.js"></script>
+<script>
+(function(){
+	var count = 0;
+	function loop(){
+		//繰り返し処理させたいコード
+		if (++count > 10) count = 0;
+		console.log(count);
+		// Basic
+		Tinycon.setBubble(count);
+		//Option
+		Tinycon.setOptions({
+		width: 7,
+		height: 9,
+		font: '10px arial',
+		colour: '#ffffff',
+		background: '#549A2F',
+		fallback: true
+		});
+	}
+	setInterval(loop,1000);
+})();
+</script>
+</head>
+<body>
+
+
+
+<h1>favicon</h1>
+<p>▼ココを見ながら設定。<br>
+<a href="http://www.webcreatorbox.com/tech/favicon/">http://www.webcreatorbox.com/tech/favicon/</a></p>
+加算する前の値を返し
+<p>これ<br>
+<a href="http://blog.tommoor.com/tinycon/">http://blog.tommoor.com/tinycon/</a></p>
+
+<p>
+	SMAPLE++…加算する前の値を返します。<br>
+	++SAMPLE…加算する後の値を返します。<br>
+	<a href="http://www.tohoho-web.com/js/operator.htm">演算子について</a>
+</p>
+
+</body>
+</html>

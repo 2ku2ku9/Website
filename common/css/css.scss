@@ -1,0 +1,9 @@
+p.cliptest {
+	height: 300px;
+	margin-bottom: 1em;
+	position: relative;
+	& img{
+	position: absolute;
+	clip: rect(50px 250px 190px 40px);
+	}
+}
